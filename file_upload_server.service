@@ -1,0 +1,14 @@
+[Unit]
+Description=File Upload Server
+After=network.target
+
+[Service]
+ExecStart=/path/to/your/project/target/release/file_upload_server
+Restart=always
+User=nobody
+Group=nogroup
+Environment=RUST_LOG=info
+WorkingDirectory=/path/to/your/project
+
+[Install]
+WantedBy=multi-user.target
